@@ -32,7 +32,7 @@ const Home = () => {
         {/* 제품 특징 */}
         <div className=" bg-[#90C8B4] h-[365px] w-full px-48">
           <div className="w-full h-full">
-            <div className="font-extrabold w-full h-auto pt-8 pl-8 text-2xl mb-6 text-gray-800">
+            <div className="font-semibold w-full h-auto pt-8 pl-8 text-2xl mb-6 text-gray-800">
               Why GRAMy?
             </div>
             <div className="flex w-full justify-between px-24">

@@ -14,7 +14,7 @@ const Header = () => {
           <Link to="/">구매 문의</Link>
           <Link to="/">고장 문의</Link>
         </div>
-        <div className=" flex items-center justify-around w-[310px]">
+        <div className=" flex items-center justify-evenly w-[310px]">
           <Link to="/login">
             <button className="bg-[#2F74F1] text-white w-[100px] h-[35px] rounded-md">
               로그인
