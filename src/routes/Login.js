@@ -3,17 +3,16 @@ import { Link } from "react-router-dom";
 
 const Login = () => {
   const [input, setinput] = useState({
-    id: "",
-    pw: "",
+    emaiil: "",
+    password: "",
   });
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
-    if (name === "email") {
-      setinput({ ...input, id: value });
-    } else if (name === "password") {
-      setinput({ ...input, pw: value });
-    }
+    setinput({
+      ...input,
+      [name]: value,
+    });
   };
 
   return (
