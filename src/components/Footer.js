@@ -20,6 +20,8 @@ const Footer = () => {
         </p>
         <a
           href="https://www.instagram.com/ppi_je_je/?hl=ko"
+          target="_blank"
+          rel="noreferrer"
           className="text-xl text-[#AAAAAA] hover:underline underline-offset-4 hover:text-white"
         >
           Instagarm

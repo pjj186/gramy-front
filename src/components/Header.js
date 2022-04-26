@@ -15,12 +15,12 @@ const Header = () => {
           <Link to="/">고장 문의</Link>
         </div>
         <div className=" flex items-center justify-around w-[310px]">
-          <Link to="/">
+          <Link to="/login">
             <button className="bg-[#2F74F1] text-white w-[100px] h-[35px] rounded-md">
               로그인
             </button>
           </Link>
-          <Link to="/">
+          <Link to="/join">
             <button className="bg-[#2F74F1] text-white w-[100px] h-[35px] rounded-md">
               회원가입
             </button>
