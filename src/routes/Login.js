@@ -1,7 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const [input, setinput] = useState({
+    id: "",
+    pw: "",
+  });
+
+  const onChangeInput = (e) => {
+    const { name, value } = e.target;
+    if (name === "email") {
+      setinput({ ...input, id: value });
+    } else if (name === "password") {
+      setinput({ ...input, pw: value });
+    }
+  };
+
   return (
     <div className="w-full h-full my-14 flex justify-center items-center">
       <div className=" bg-white w-[600px] h-[800px] shadow-lg">
@@ -15,12 +29,18 @@ const Login = () => {
               type="email"
               placeholder="이메일 주소"
               required
+              value={input.id}
+              name="email"
+              onChange={onChangeInput}
             />
             <input
               className=" border-b-slate-700 border-b-[1px] h-10 mb-4"
               type="password"
               placeholder="비밀번호"
               required
+              value={input.pw}
+              name="password"
+              onChange={onChangeInput}
             />
             <div className="flex  w-full justify-end mb-4 font-thin">
               <Link to="/">비밀번호를 잊어버리셨나요?</Link>
