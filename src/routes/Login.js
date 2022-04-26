@@ -25,7 +25,7 @@ const Login = () => {
           </div>
           <form className="flex flex-col">
             <input
-              className=" border-b-slate-700 border-b-[1px] h-10 mb-4"
+              className=" border-b-slate-700 border-b-[1px] h-10 mb-4 pl-2 focus:outline-none focus:border-b-0 focus:border-slate-500 focus:ring-[3px] focus:ring-slate-500 transition-all duration-200"
               type="email"
               placeholder="이메일 주소"
               required
@@ -34,7 +34,7 @@ const Login = () => {
               onChange={onChangeInput}
             />
             <input
-              className=" border-b-slate-700 border-b-[1px] h-10 mb-4"
+              className=" border-b-slate-700 border-b-[1px] h-10 mb-4 pl-2 focus:outline-none focus:border-b-0 focus:border-slate-500 focus:ring-[3px] focus:ring-slate-500 transition-all duration-200"
               type="password"
               placeholder="비밀번호"
               required
