@@ -173,21 +173,13 @@ const Join = () => {
                     />
                     <span>전체 약관 동의합니다.</span>
                   </div>
-                  <div className="flex items-center">
-                    <input
-                      className="mr-2 focus:ring-0 text-green-500"
-                      type="checkbox"
-                      required
-                    />
-                    <span>GRAMy 이용 약관 동의</span>
-                  </div>
                   <div className="flex items-center relative">
                     <input
                       className="mr-2 focus:ring-0 text-green-500"
                       type="checkbox"
                       required
                     />
-                    <span>개인정보 취급 방침 동의 (필수)</span>
+                    <span>GRAMy 이용 약관 동의</span>
                     <div className="absolute right-0 font-semibold pr-5">
                       <span
                         className="cursor-pointer"
@@ -202,8 +194,9 @@ const Join = () => {
                     <input
                       className="mr-2 focus:ring-0 text-green-500"
                       type="checkbox"
+                      required
                     />
-                    <span>개인정보 취급 방침 동의 (선택)</span>
+                    <span>개인정보 취급 방침 동의 (필수)</span>
                     <div className="absolute right-0 font-semibold pr-5">
                       <span
                         className="cursor-pointer"
@@ -219,7 +212,7 @@ const Join = () => {
                       className="mr-2 focus:ring-0 text-green-500"
                       type="checkbox"
                     />
-                    <span>할인/혜택/마케팅/광고 등 정보 수신 (선택)</span>
+                    <span>개인정보 취급 방침 동의 (선택)</span>
                     <div className="absolute right-0 font-semibold pr-5">
                       <span
                         className="cursor-pointer"
@@ -229,6 +222,13 @@ const Join = () => {
                         약관보기 {">"}
                       </span>
                     </div>
+                  </div>
+                  <div className="flex items-center">
+                    <input
+                      className="mr-2 focus:ring-0 text-green-500"
+                      type="checkbox"
+                    />
+                    <span>할인/혜택/마케팅/광고 등 정보 수신 (선택)</span>
                   </div>
                 </div>
               </div>
