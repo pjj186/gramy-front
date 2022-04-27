@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className=" w-full h-[80px] bg-white flex">
-      <img src="img/logo.png" alt="로고" className=" w-[80px] h-[80px]" />
+      <div className=" w-[80px] h-[80px]" />
       <div className=" flex justify-between h-[80px] w-full">
         <div className=" flex items-center justify-around w-[450px] h-[80px]">
           <Link to="/" className=" font-bold">
-            GRAMy
+            <img src="img/logo.png" alt="로고" className=" w-[80px] h-[80px]" />
           </Link>
           <Link to="/">제품 소개</Link>
           <Link to="/">구매 문의</Link>
