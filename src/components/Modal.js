@@ -1,15 +1,15 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../App";
 
-const Modal = () => {
+const Modal = ({ modalId }) => {
   const ModalContext = useContext(AppContext);
   const [isMouseLeave, setIsMouseLeave] = useState(false);
 
-  const closeModal = () => {
+  const closeModal = (e) => {
     if (isMouseLeave === true) {
       ModalContext.setTerms({
         ...ModalContext.terms,
-        modal1: false,
+        [modalId]: false,
       });
     }
   };
@@ -19,6 +19,7 @@ const Modal = () => {
         className="fixed top-0 w-screen h-screen bg-slate-500/50 z-10 flex justify-center items-center"
         onClick={closeModal}
       >
+        {/* 모달 컨테이너 */}
         <div
           onMouseOver={(e) => {
             setIsMouseLeave(false);
@@ -28,7 +29,7 @@ const Modal = () => {
           }}
           className="z-20 w-[700px] h-[800px] opacity-100 bg-white"
         >
-          내가만만해
+          <div className=""></div>
         </div>
       </div>
     </>

@@ -13,7 +13,9 @@ const Router = () => {
 
   return (
     <>
-      {ModalContext.terms.modal1 ? <Modal /> : null}
+      {ModalContext.terms.modal1 ? <Modal modalId="modal1" /> : null}
+      {ModalContext.terms.modal2 ? <Modal modalId="modal2" /> : null}
+      {ModalContext.terms.modal3 ? <Modal modalId="modal3" /> : null}
       <BrowserRouter>
         <Header />
         <Routes>
