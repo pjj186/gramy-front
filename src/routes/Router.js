@@ -1,22 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AppContext } from "../App";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import Home from "./Home";
 import Join from "./Join";
 import Login from "./Login";
+import Modal from "../components/Modal";
 
 const Router = () => {
+  const ModalContext = useContext(AppContext);
+
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="join" element={<Join />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <>
+      {ModalContext.terms.modal1 ? <Modal /> : null}
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="join" element={<Join />} />
+        </Routes>
+        <Footer />
+      </BrowserRouter>
+    </>
   );
 };
 
