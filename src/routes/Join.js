@@ -18,6 +18,7 @@ const Join = () => {
   const [address, setAddress] = useState({
     addr: "",
     zonecode: "",
+    detailAddr: "",
   });
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -37,23 +38,28 @@ const Join = () => {
 
   const checkBoxes = [checkBox1, checkBox2, checkBox3, checkBox4];
 
+  const detailAddrInput = (e) => {
+    const { name, value } = e.target;
+    setAddress({
+      ...address,
+      [name]: value,
+    });
+    setInput({
+      address: `${address.zonecode} ${address.addr} ${value}`,
+    });
+  };
+
   const onChangeInput = (e) => {
     const { name, value } = e.target;
-    if (name === "address") {
-      setInput({
-        ...input,
-        [name]: address.addr + address.zonecode + value,
-      });
-    } else {
-      setInput({
-        ...input,
-        [name]: value,
-      });
-    }
+    setInput({
+      ...input,
+      [name]: value,
+    });
   };
 
   const phoneAuth = (e) => {
     e.preventDefault();
+    console.log(input);
   };
 
   const showTerms = (e) => {
@@ -208,9 +214,9 @@ const Join = () => {
                       type="text"
                       placeholder="상세 주소"
                       required
-                      name="address"
-                      value={input.address}
-                      onChange={onChangeInput}
+                      name="detailAddr"
+                      value={address.address}
+                      onChange={detailAddrInput}
                     />
                   </div>
                 </div>
