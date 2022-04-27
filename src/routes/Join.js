@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useRef } from "react";
 import { AppContext } from "../App";
 
 const Join = () => {
@@ -12,6 +12,13 @@ const Join = () => {
     gender: "",
     address: "",
   });
+
+  const checkBox1 = useRef();
+  const checkBox2 = useRef();
+  const checkBox3 = useRef();
+  const checkBox4 = useRef();
+
+  const checkBoxes = [checkBox1, checkBox2, checkBox3, checkBox4];
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
@@ -35,6 +42,13 @@ const Join = () => {
       ...ModalContext.terms,
       [id]: true,
     });
+  };
+
+  const checkAll = (e) => {
+    const { checked } = e.target;
+    if (checked) {
+      checkBoxes.forEach((i) => (i.current.checked = true));
+    }
   };
 
   return (
@@ -167,16 +181,20 @@ const Join = () => {
                 <div className="font-semibold text-xl">이용 약관 동의</div>
                 <div className="flex flex-col justify-around h-44 font-thin">
                   <div className="flex items-center">
+                    {/* 전체 약관 동의 */}
                     <input
                       className="mr-2 focus:ring-0 text-green-500"
                       type="checkbox"
+                      onClick={checkAll}
                     />
                     <span>전체 약관 동의합니다.</span>
                   </div>
                   <div className="flex items-center relative">
+                    {/* GRAMy 이용 약관 동의 */}
                     <input
                       className="mr-2 focus:ring-0 text-green-500"
                       type="checkbox"
+                      ref={checkBox1}
                       required
                     />
                     <span>GRAMy 이용 약관 동의</span>
@@ -191,9 +209,11 @@ const Join = () => {
                     </div>
                   </div>
                   <div className="flex items-center relative">
+                    {/* 개인정보 취급 방침 동의 (필수) */}
                     <input
                       className="mr-2 focus:ring-0 text-green-500"
                       type="checkbox"
+                      ref={checkBox2}
                       required
                     />
                     <span>개인정보 취급 방침 동의 (필수)</span>
@@ -208,9 +228,11 @@ const Join = () => {
                     </div>
                   </div>
                   <div className="flex items-center relative">
+                    {/* 개인정보 취급 방침 동의 (선택) */}
                     <input
                       className="mr-2 focus:ring-0 text-green-500"
                       type="checkbox"
+                      ref={checkBox3}
                     />
                     <span>개인정보 취급 방침 동의 (선택)</span>
                     <div className="absolute right-0 font-semibold pr-5">
@@ -227,6 +249,7 @@ const Join = () => {
                     <input
                       className="mr-2 focus:ring-0 text-green-500"
                       type="checkbox"
+                      ref={checkBox4}
                     />
                     <span>할인/혜택/마케팅/광고 등 정보 수신 (선택)</span>
                   </div>

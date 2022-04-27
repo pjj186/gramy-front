@@ -14,6 +14,7 @@ const Modal = ({ modalId }) => {
       });
     }
   };
+
   return (
     <>
       <div
