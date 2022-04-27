@@ -28,8 +28,7 @@ const Join = () => {
     setIsPopupOpen(true);
   };
 
-  const closePopup = (e) => {
-    e.preventDefault();
+  const closePopup = () => {
     setIsPopupOpen(false);
   };
 
