@@ -57,7 +57,7 @@ body {
     background-color: #F4F6F6 ;
 }
 
-/* input type number 오른쪽 화살표 제거 */
+/* input type number  */
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
     -webkit-appearance: none;

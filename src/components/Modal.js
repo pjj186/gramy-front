@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AppContext } from "../App";
+import { cls } from "../utils/utils";
 
 const Modal = ({ modalId }) => {
   const ModalContext = useContext(AppContext);
@@ -27,7 +28,10 @@ const Modal = ({ modalId }) => {
           onMouseLeave={(e) => {
             setIsMouseLeave(true);
           }}
-          className="z-20 w-[700px] h-[870px] opacity-100 bg-white rounded-md"
+          className={cls(
+            "z-20 w-[700px] opacity-100 bg-white rounded-md",
+            modalId === "modal1" ? "h-[870px]" : "h-[600px]"
+          )}
         >
           {/* 모달 헤더 */}
           <div className="w-full px-7 py-5 flex items-center justify-between">
@@ -295,7 +299,87 @@ const Modal = ({ modalId }) => {
                 <br />
               </div>
             ) : null}
-            {modalId === "modal2" ? <div className=""></div> : null}
+            {modalId === "modal2" ? (
+              <div className="py-5 px-5">
+                <div className=" font-bold text-3xl mb-5">
+                  개인정보 수집 * 이용 동의(필수)
+                </div>
+                <table className=" w-full border border-slate-500 mb-14">
+                  <thead>
+                    <tr>
+                      <th className="border border-slate-500 w-72 p-3 font-bold">
+                        수집 목적
+                      </th>
+                      <th className="border border-slate-500 font-bold">
+                        수집 항목
+                      </th>
+                      <th className="border border-slate-500 font-bold">
+                        보유 기간
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className=" font-light">
+                    <tr>
+                      <td className="border border-slate-500 p-3">
+                        이용자 식별 및 본인여부
+                      </td>
+                      <td
+                        rowSpan="4"
+                        className="border border-slate-500 align-middle px-2"
+                      >
+                        이름, 휴대폰번호, 이메일, 비밀번호(암호화)
+                      </td>
+                      <td
+                        rowSpan="4"
+                        className="border border-slate-500 align-middle px-2"
+                      >
+                        회원 탈퇴 즉시 파기 <br />
+                        부정이용방지를 위하여 1년동안 보관 후 파기(이메일,
+                        휴대폰번호)
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-slate-500 p-3">
+                        계약 이행 및 약관변경 등의 고지를 위한 연락, 본인의사
+                        확인
+                        <br />및 민원 등의 고객 고충 처리
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-slate-500 p-3">
+                        부정 이용 방지, 비인가 사용방지 및 서비스 제공 및 계약의
+                        이행
+                      </td>
+                    </tr>
+                    <tr>
+                      <td className="border border-slate-500 p-3">
+                        만 14세 미만 아동인지 확인
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div className=" text-sm font-medium mb-5">
+                  서비스 제공을 위해서 필요한 최소한의 개인정보이므로 동의를 해
+                  주셔야 서비스를 이용하실 수 있습니다.
+                </div>
+                <hr className="mb-8" />
+                <div className="relative w-full">
+                  <div className="flex items-center absolute right-0">
+                    <button
+                      className="h-10 bg-[#90C8B4] rounded-md text-white font-bold w-28"
+                      onClick={() => {
+                        ModalContext.setTerms({
+                          ...ModalContext.terms,
+                          [modalId]: false,
+                        });
+                      }}
+                    >
+                      확인
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : null}
             {modalId === "modal3" ? <div className=""></div> : null}
           </>
         </div>
