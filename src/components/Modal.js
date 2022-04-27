@@ -30,7 +30,11 @@ const Modal = ({ modalId }) => {
           }}
           className={cls(
             "z-20 w-[700px] opacity-100 bg-white rounded-md",
-            modalId === "modal1" ? "h-[870px]" : "h-[600px]"
+            modalId === "modal1"
+              ? "h-[870px]"
+              : modalId === "modal2"
+              ? "h-[600px]"
+              : "h-[500px]"
           )}
         >
           {/* 모달 헤더 */}
@@ -302,7 +306,7 @@ const Modal = ({ modalId }) => {
             {modalId === "modal2" ? (
               <div className="py-5 px-5">
                 <div className=" font-bold text-3xl mb-5">
-                  개인정보 수집 * 이용 동의(필수)
+                  개인정보 수집 * 이용 동의 (필수)
                 </div>
                 <table className=" w-full border border-slate-500 mb-14">
                   <thead>
@@ -380,7 +384,63 @@ const Modal = ({ modalId }) => {
                 </div>
               </div>
             ) : null}
-            {modalId === "modal3" ? <div className=""></div> : null}
+            {modalId === "modal3" ? (
+              <div className="py-5 px-5">
+                <div className=" font-bold text-3xl mb-5">
+                  개인정보 수집 * 이용 동의 (선택)
+                </div>
+                <table className=" w-full border border-slate-500 mb-14">
+                  <thead>
+                    <tr>
+                      <th className="border border-slate-500 w-72 p-3 font-bold">
+                        수집 목적
+                      </th>
+                      <th className="border border-slate-500 w-32 font-bold">
+                        수집 항목
+                      </th>
+                      <th className="border border-slate-500 font-bold">
+                        보유 기간
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody className=" font-light">
+                    <tr>
+                      <td className="border border-slate-500 p-3 text-base">
+                        맞춤형 회원 서비스 제공
+                      </td>
+                      <td className="border border-slate-500 p-3 text-base">
+                        성별, 생년월일
+                      </td>
+                      <td className="border border-slate-500 p-3 text-base">
+                        회원 탈퇴 즉시 파기 <br />
+                        부정이용방지를 위하여 1년동안 보관 후 파기(이메일,
+                        휴대폰번호)
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div className=" text-sm font-medium mb-5">
+                  본 항목은 선택적 동의 항목으로서, 동의하지 않으셔도 서비스를
+                  이용하실 수 있습니다.
+                </div>
+                <hr className="mb-8" />
+                <div className="relative w-full">
+                  <div className="flex items-center absolute right-0">
+                    <button
+                      className="h-10 bg-[#90C8B4] rounded-md text-white font-bold w-28"
+                      onClick={() => {
+                        ModalContext.setTerms({
+                          ...ModalContext.terms,
+                          [modalId]: false,
+                        });
+                      }}
+                    >
+                      확인
+                    </button>
+                  </div>
+                </div>
+              </div>
+            ) : null}
           </>
         </div>
       </div>
