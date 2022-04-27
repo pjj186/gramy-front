@@ -110,7 +110,7 @@ const Join = () => {
                 <div className="flex items-center mr-1">
                   <span className="mr-2">남성</span>
                   <input
-                    className="focus:ring-2 focus:ring-sky-400 text-sky-400"
+                    className="focus:ring-2 focus:ring-green-300 text-green-300"
                     type="radio"
                     name="gender"
                     value="man"
@@ -120,7 +120,7 @@ const Join = () => {
                 <div className="flex items-center mr-1">
                   <span className="mr-2">여성</span>
                   <input
-                    className="focus:ring-2 focus:ring-red-300 text-red-300"
+                    className="focus:ring-2 focus:ring-green-300 text-green-300"
                     type="radio"
                     name="gender"
                     value="women"
