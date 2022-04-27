@@ -1,10 +1,15 @@
 import React from "react";
 import DaumPostcode from "react-daum-postcode";
 
-const PopupPostCode = ({ onClose }) => {
+const PopupPostCode = ({ onClose, setAddress, address }) => {
   const onComplete = (data) => {
     // 필요한 데이터 : data.address , zoneCode
     console.log(data);
+    setAddress({
+      ...address,
+      addr: data.address,
+      zonecode: data.zonecode,
+    });
     onClose();
   };
 

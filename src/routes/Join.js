@@ -6,13 +6,18 @@ import PopupPostCode from "../components/PopupPostCode";
 const Join = () => {
   const ModalContext = useContext(AppContext);
 
-  const [input, setinput] = useState({
+  const [input, setInput] = useState({
     email: "",
     password: "",
     username: "",
     phone: "",
     gender: "",
     address: "",
+  });
+
+  const [address, setAddress] = useState({
+    addr: "",
+    zonecode: "",
   });
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
@@ -34,10 +39,17 @@ const Join = () => {
 
   const onChangeInput = (e) => {
     const { name, value } = e.target;
-    setinput({
-      ...input,
-      [name]: value,
-    });
+    if (name === "address") {
+      setInput({
+        ...input,
+        [name]: address.addr + address.zonecode + value,
+      });
+    } else {
+      setInput({
+        ...input,
+        [name]: value,
+      });
+    }
   };
 
   const phoneAuth = (e) => {
@@ -65,7 +77,11 @@ const Join = () => {
         {isPopupOpen && (
           <div>
             <PopupDom>
-              <PopupPostCode onClose={closePopup} />
+              <PopupPostCode
+                onClose={closePopup}
+                setAddress={setAddress}
+                address={address}
+              />
             </PopupDom>
           </div>
         )}
@@ -165,6 +181,7 @@ const Join = () => {
                       className="h-6 w-32 mr-4 py-4 bg-slate-100"
                       type="text"
                       placeholder="우편번호"
+                      value={address.zonecode}
                       disabled
                     />
                     <button
@@ -180,6 +197,7 @@ const Join = () => {
                       className="h-6 w-96 py-4 bg-slate-100"
                       type="text"
                       placeholder="주소"
+                      value={address.addr}
                       disabled
                     />
                   </div>
@@ -190,6 +208,9 @@ const Join = () => {
                       type="text"
                       placeholder="상세 주소"
                       required
+                      name="address"
+                      value={input.address}
+                      onChange={onChangeInput}
                     />
                   </div>
                 </div>
