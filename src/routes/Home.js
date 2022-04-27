@@ -91,7 +91,7 @@ const Home = () => {
           </div>
         </div>
         {/* 제품 소개 */}
-        <div className="w-full h-[1500px]">
+        <div className="w-full h-[1500px]" id="productInfo">
           <div>제품 소개 들어감</div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import * as Scroll from "react-scroll";
 
 const Header = () => {
   return (
@@ -10,7 +11,14 @@ const Header = () => {
           <Link to="/" className=" font-bold">
             <img src="img/logo.png" alt="로고" className=" w-[80px] h-[80px]" />
           </Link>
-          <Link to="/">제품 소개</Link>
+          <Scroll.Link
+            to="productInfo"
+            spy={true}
+            smooth={true}
+            className="cursor-pointer"
+          >
+            제품 소개
+          </Scroll.Link>
           <Link to="/purchase">구매 문의</Link>
           <Link to="/report">고장 문의</Link>
         </div>
