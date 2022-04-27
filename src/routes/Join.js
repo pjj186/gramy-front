@@ -1,5 +1,7 @@
 import React, { useContext, useState, useRef } from "react";
 import { AppContext } from "../App";
+import PopupDom from "../components/PopupDom";
+import PopupPostCode from "../components/PopupPostCode";
 
 const Join = () => {
   const ModalContext = useContext(AppContext);
@@ -12,6 +14,16 @@ const Join = () => {
     gender: "",
     address: "",
   });
+
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
+
+  const openPopup = () => {
+    setIsPopupOpen(true);
+  };
+
+  const closePopup = () => {
+    setIsPopupOpen(false);
+  };
 
   const checkBox1 = useRef();
   const checkBox2 = useRef();
@@ -32,10 +44,6 @@ const Join = () => {
     e.preventDefault();
   };
 
-  const findAddress = (e) => {
-    e.preventDefault();
-  };
-
   const showTerms = (e) => {
     const { id } = e.target;
     ModalContext.setTerms({
@@ -53,6 +61,15 @@ const Join = () => {
 
   return (
     <>
+      <div id="popupDom">
+        {isPopupOpen && (
+          <div>
+            <PopupDom>
+              <PopupPostCode onClose={closePopup} />
+            </PopupDom>
+          </div>
+        )}
+      </div>
       <div className="w-full h-full my-14 flex justify-center items-center">
         <div className=" bg-white w-[600px] h-[800px] shadow-lg">
           <div className=" px-10">
@@ -152,7 +169,7 @@ const Join = () => {
                     />
                     <button
                       className="h-8 bg-white border border-black text-black font-normal w-24"
-                      onClick={findAddress}
+                      onClick={openPopup}
                     >
                       주소검색
                     </button>
@@ -172,6 +189,7 @@ const Join = () => {
                       className="h-6 w-80 py-4"
                       type="text"
                       placeholder="상세 주소"
+                      required
                     />
                   </div>
                 </div>

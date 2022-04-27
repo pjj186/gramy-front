@@ -11,8 +11,8 @@ const Header = () => {
             <img src="img/logo.png" alt="로고" className=" w-[80px] h-[80px]" />
           </Link>
           <Link to="/">제품 소개</Link>
-          <Link to="/">구매 문의</Link>
-          <Link to="/">고장 문의</Link>
+          <Link to="/purchase">구매 문의</Link>
+          <Link to="/report">고장 문의</Link>
         </div>
         <div className=" flex items-center justify-evenly w-[310px]">
           <Link to="/login">

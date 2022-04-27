@@ -7,6 +7,8 @@ import Home from "./Home";
 import Join from "./Join";
 import Login from "./Login";
 import Modal from "../components/Modal";
+import Purchase from "./Purchase";
+import Report from "./Report";
 
 const Router = () => {
   const ModalContext = useContext(AppContext);
@@ -21,7 +23,9 @@ const Router = () => {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="join" element={<Join />} />
+          <Route path="/join" element={<Join />} />
+          <Route path="/purchase" element={<Purchase />} />
+          <Route path="/report" element={<Report />} />
         </Routes>
         <Footer />
       </BrowserRouter>
