@@ -23,11 +23,13 @@ const Join = () => {
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
-  const openPopup = () => {
+  const openPopup = (e) => {
+    e.preventDefault();
     setIsPopupOpen(true);
   };
 
-  const closePopup = () => {
+  const closePopup = (e) => {
+    e.preventDefault();
     setIsPopupOpen(false);
   };
 
