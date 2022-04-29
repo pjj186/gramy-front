@@ -29,10 +29,10 @@ const Purchase = () => {
               <thead>
                 <tr className="border border-slate-500">
                   <th className="py-3">번호</th>
-                  <th>제목</th>
-                  <th>작성자</th>
-                  <th>작성일</th>
-                  <th>조회</th>
+                  <th className="w-[1200px]">제목</th>
+                  <th className="w-[200px]">작성자</th>
+                  <th className="w-[200px]">작성일</th>
+                  <th className="w-[100px]">조회</th>
                 </tr>
               </thead>
               <tbody className="text-center">
