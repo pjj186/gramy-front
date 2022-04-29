@@ -11,7 +11,11 @@ const Header = () => {
       <div className=" flex justify-between h-[80px] w-full">
         <div className=" flex items-center justify-around w-[450px] h-[80px]">
           <Link to="/" className=" font-bold">
-            <img src="img/logo.png" alt="로고" className=" w-[80px] h-[80px]" />
+            <img
+              src="/img/logo.png"
+              alt="로고"
+              className=" w-[80px] h-[80px]"
+            />
           </Link>
           {location.pathname === "/" ? (
             <Scroll.Link
