@@ -1,4 +1,5 @@
 import React, { useContext, useState, useRef } from "react";
+import Helmet from "react-helmet";
 import { AppContext } from "../App";
 import PopupDom from "../components/PopupDom";
 import PopupPostCode from "../components/PopupPostCode";
@@ -80,6 +81,9 @@ const Join = () => {
 
   return (
     <>
+      <Helmet>
+        <title>GRAMy | 회원가입</title>
+      </Helmet>
       <div id="popupDom">
         {isPopupOpen && (
           <div>
