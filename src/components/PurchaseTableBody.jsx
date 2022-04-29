@@ -1,79 +1,25 @@
 import React from "react";
 
-const PurchaseTableBody = () => {
+const PurchaseTableBody = ({ articleInfo }) => {
+  articleInfo
+    ? articleInfo.map((info) => console.log(info))
+    : console.log("no data");
   return (
-    <tbody className="text-center">
-      <tr className="border border-slate-500">
-        <td className="py-3 ">10</td>
-        <td>타이틀</td>
-        <td>휴먼</td>
-        <td>2022-04-29</td>
-        <td>0</td>
-      </tr>
-      <tr className="border border-slate-500">
-        <td className="py-3">9</td>
-        <td>타이틀</td>
-        <td>휴먼</td>
-        <td>2022-04-29</td>
-        <td>0</td>
-      </tr>
-      <tr className="border border-slate-500">
-        <td className="py-3">8</td>
-        <td>타이틀</td>
-        <td>휴먼</td>
-        <td>2022-04-29</td>
-        <td>0</td>
-      </tr>
-      <tr className="border border-slate-500">
-        <td className="py-3">7</td>
-        <td>타이틀</td>
-        <td>휴먼</td>
-        <td>2022-04-29</td>
-        <td>0</td>
-      </tr>
-      <tr className="border border-slate-500">
-        <td className="py-3">6</td>
-        <td>타이틀</td>
-        <td>휴먼</td>
-        <td>2022-04-29</td>
-        <td>0</td>
-      </tr>
-      <tr className="border border-slate-500">
-        <td className="py-3">5</td>
-        <td>타이틀</td>
-        <td>휴먼</td>
-        <td>2022-04-29</td>
-        <td>0</td>
-      </tr>
-      <tr className="border border-slate-500">
-        <td className="py-3">4</td>
-        <td>타이틀</td>
-        <td>휴먼</td>
-        <td>2022-04-29</td>
-        <td>0</td>
-      </tr>
-      <tr className="border border-slate-500">
-        <td className="py-3">3</td>
-        <td>타이틀</td>
-        <td>휴먼</td>
-        <td>2022-04-29</td>
-        <td>0</td>
-      </tr>
-      <tr className="border border-slate-500">
-        <td className="py-3">2</td>
-        <td>타이틀</td>
-        <td>휴먼</td>
-        <td>2022-04-29</td>
-        <td>0</td>
-      </tr>
-      <tr className="border border-slate-500">
-        <td className="py-3">1</td>
-        <td>타이틀</td>
-        <td>휴먼</td>
-        <td>2022-04-29</td>
-        <td>0</td>
-      </tr>
-    </tbody>
+    <>
+      {articleInfo
+        ? articleInfo.map((info, key) => {
+            return (
+              <tr className="border border-slate-500">
+                <td className="py-3 ">{info.id}</td>
+                <td>{info.name}</td>
+                <td>{info.username}</td>
+                <td>2022-04-29</td>
+                <td>0</td>
+              </tr>
+            );
+          })
+        : null}
+    </>
   );
 };
 

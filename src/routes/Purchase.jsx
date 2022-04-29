@@ -1,9 +1,18 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
 import PurchaseTableBody from "../components/PurchaseTableBody";
 
 const Purchase = () => {
+  const [articleInfo, setArticleInfo] = useState();
+
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/users/")
+      .then((res) => setArticleInfo(res.data));
+  }, []);
+
   return (
     <>
       <Helmet>
@@ -26,7 +35,9 @@ const Purchase = () => {
                   <th>조회</th>
                 </tr>
               </thead>
-              <PurchaseTableBody />
+              <tbody className="text-center">
+                <PurchaseTableBody articleInfo={articleInfo} />
+              </tbody>
             </table>
           </div>
           <div className=" w-[87%] flex justify-end mb-4">
