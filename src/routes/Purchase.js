@@ -1,6 +1,7 @@
 import React from "react";
 import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
+import PurchaseTableBody from "../components/PurchaseTableBody";
 
 const Purchase = () => {
   return (
@@ -25,78 +26,7 @@ const Purchase = () => {
                   <th>조회</th>
                 </tr>
               </thead>
-              <tbody className="text-center">
-                <tr className="border border-slate-500">
-                  <td className="py-3 ">10</td>
-                  <td>타이틀</td>
-                  <td>휴먼</td>
-                  <td>2022-04-29</td>
-                  <td>0</td>
-                </tr>
-                <tr className="border border-slate-500">
-                  <td className="py-3">9</td>
-                  <td>타이틀</td>
-                  <td>휴먼</td>
-                  <td>2022-04-29</td>
-                  <td>0</td>
-                </tr>
-                <tr className="border border-slate-500">
-                  <td className="py-3">8</td>
-                  <td>타이틀</td>
-                  <td>휴먼</td>
-                  <td>2022-04-29</td>
-                  <td>0</td>
-                </tr>
-                <tr className="border border-slate-500">
-                  <td className="py-3">7</td>
-                  <td>타이틀</td>
-                  <td>휴먼</td>
-                  <td>2022-04-29</td>
-                  <td>0</td>
-                </tr>
-                <tr className="border border-slate-500">
-                  <td className="py-3">6</td>
-                  <td>타이틀</td>
-                  <td>휴먼</td>
-                  <td>2022-04-29</td>
-                  <td>0</td>
-                </tr>
-                <tr className="border border-slate-500">
-                  <td className="py-3">5</td>
-                  <td>타이틀</td>
-                  <td>휴먼</td>
-                  <td>2022-04-29</td>
-                  <td>0</td>
-                </tr>
-                <tr className="border border-slate-500">
-                  <td className="py-3">4</td>
-                  <td>타이틀</td>
-                  <td>휴먼</td>
-                  <td>2022-04-29</td>
-                  <td>0</td>
-                </tr>
-                <tr className="border border-slate-500">
-                  <td className="py-3">3</td>
-                  <td>타이틀</td>
-                  <td>휴먼</td>
-                  <td>2022-04-29</td>
-                  <td>0</td>
-                </tr>
-                <tr className="border border-slate-500">
-                  <td className="py-3">2</td>
-                  <td>타이틀</td>
-                  <td>휴먼</td>
-                  <td>2022-04-29</td>
-                  <td>0</td>
-                </tr>
-                <tr className="border border-slate-500">
-                  <td className="py-3">1</td>
-                  <td>타이틀</td>
-                  <td>휴먼</td>
-                  <td>2022-04-29</td>
-                  <td>0</td>
-                </tr>
-              </tbody>
+              <PurchaseTableBody />
             </table>
           </div>
           <div className=" w-[87%] flex justify-end mb-4">
