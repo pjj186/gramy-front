@@ -9,9 +9,16 @@ const PurchaseTableBody = ({ articleInfo }) => {
             return (
               <tr key={key} className="border border-slate-500">
                 <td className="py-3 ">{info.id}</td>
-                <Link to={`${info.id}`}>
-                  <td>{info.name}</td>
-                </Link>
+                <td>
+                  <Link
+                    to={`${info.id}`}
+                    state={{
+                      info: info,
+                    }}
+                  >
+                    {info.name}
+                  </Link>
+                </td>
                 <td>{info.username}</td>
                 <td>2022-04-29</td>
                 <td>0</td>
