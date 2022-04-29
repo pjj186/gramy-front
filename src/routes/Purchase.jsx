@@ -2,6 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import Helmet from "react-helmet";
 import { Link } from "react-router-dom";
+import BoardTitle from "../components/BoardTitle";
 import PurchaseTableBody from "../components/PurchaseTableBody";
 
 const Purchase = () => {
@@ -19,20 +20,18 @@ const Purchase = () => {
         <title>GRAMy | 구매 문의</title>
       </Helmet>
       <div className="w-full h-full ">
-        <div className="py-10 flex w-full h-full items-center justify-center text-3xl font-semibold">
-          구매 문의 게시판
-        </div>
+        <BoardTitle title="구매 문의 게시판" />
         <div className="w-full h-full flex flex-col">
           <div className="w-full h-full flex justify-center items-center">
             {/* 게시글 리스트 */}
             <table className=" w-3/4 border border-slate-500 mb-4">
               <thead>
                 <tr className="border border-slate-500">
-                  <th className="py-3">번호</th>
-                  <th className="w-[1200px]">제목</th>
-                  <th className="w-[200px]">작성자</th>
-                  <th className="w-[200px]">작성일</th>
-                  <th className="w-[100px]">조회</th>
+                  <th className="w-[100px] py-3 font-extrabold">번호</th>
+                  <th className="w-[1200px] font-extrabold">제목</th>
+                  <th className="w-[200px] font-extrabold">작성자</th>
+                  <th className="w-[200px] font-extrabold">작성일</th>
+                  <th className="w-[100px] font-extrabold">조회</th>
                 </tr>
               </thead>
               <tbody className="text-center">
